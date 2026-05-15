@@ -449,8 +449,24 @@
     #woods .section-desc { color: rgba(255,255,255,0.7); }
 
     .woods-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
       margin-top: 56px;
+    }
+
+    /* Silver Oak swatch */
+    .wood-texture-swatch.swatch-silveroak {
+      background: linear-gradient(135deg,
+        #8FAF8F 0%, #6B8E6B 20%, #A0C0A0 35%,
+        #5A7A5A 50%, #8FAF8F 65%, #6B8E6B 80%, #A0C0A0 100%
+      );
+    }
+
+    /* Brazil Teak swatch */
+    .wood-texture-swatch.swatch-brazilteak {
+      background: linear-gradient(135deg,
+        #8B4513 0%, #6B3010 20%, #A05020 35%,
+        #5C2800 50%, #8B4513 65%, #7A3A10 80%, #A05020 100%
+      );
     }
 
     .wood-card {
@@ -481,6 +497,8 @@
     .wood-card.padauk::before { background: linear-gradient(90deg, #C0392B, #E74C3C); }
     .wood-card.sal::before { background: linear-gradient(90deg, #27AE60, #2ECC71); }
     .wood-card.mahagani::before { background: linear-gradient(90deg, #8E44AD, #9B59B6); }
+    .wood-card#wood-silveroak::before { background: linear-gradient(90deg, #6B8E6B, #9EB89E); }
+    .wood-card#wood-brazilteak::before { background: linear-gradient(90deg, #7B4A2D, #C47A3A); }
 
     .wood-card:hover {
       background: rgba(255,255,255,0.09);
@@ -1300,11 +1318,11 @@
       </div>
       <div class="hero-stats">
         <div class="stat">
-          <span class="stat-num">500+</span>
+          <span class="stat-num" data-target="500000">5L+</span>
           <span class="stat-label">Happy Customers</span>
         </div>
         <div class="stat">
-          <span class="stat-num">10+</span>
+          <span class="stat-num">6+</span>
           <span class="stat-label">Wood Varieties</span>
         </div>
         <div class="stat">
@@ -1330,8 +1348,8 @@
       <div class="wood-showcase-card c-teak" onclick="scrollToWood('wood-teak')">
         <div class="wood-texture-swatch swatch-teak" style="margin-bottom:0;"></div>
         <div class="wsc-info">
-          <div class="wsc-name">Teak Wood</div>
-          <div class="wsc-desc">Golden-brown grain · Natural oil · Long-lasting</div>
+          <div class="wsc-name">Kerala Teak</div>
+          <div class="wsc-desc">World's finest teak · Nilambur origin · 100+ year durability</div>
         </div>
         <span class="wsc-tag">Premium</span>
         <span class="wsc-arrow">→</span>
@@ -1483,25 +1501,21 @@
   <div class="woods-grid">
     <div class="wood-card teak reveal" id="wood-teak" onclick="window.location.href='teak.html'" style="cursor:pointer;">
       <div class="wood-texture-swatch swatch-teak swatch-lg"></div>
-      <div class="wood-name">Teak</div>
-      <div class="wood-sci">Tectona grandis</div>
-      <p class="wood-desc">
-        The king of hardwoods. Indian teak is prized worldwide for its exceptional durability, natural oil content, and gorgeous golden-brown grain. Highly resistant to moisture, insects, and weathering — perfect for furniture, flooring, and construction.
-      </p>
+      <div class="wood-name">Kerala Teak</div>
+      <div class="wood-sci">Tectona grandis — Kerala Origin</div>
+      <p class="wood-desc">Regarded as the world's finest teak, grown in Kerala's laterite-rich Western Ghats forests of Nilambur, Wayanad, and Palakkad. Kerala Teak's slow 60–80 year natural growth cycle produces timber of unmatched density, oil content, and grain quality — the undisputed benchmark of Indian hardwood excellence.</p>
       <div class="wood-tags">
-        <span class="wood-tag">Furniture</span>
-        <span class="wood-tag">Flooring</span>
-        <span class="wood-tag">Construction</span>
+        <span class="wood-tag">Premium Furniture</span>
         <span class="wood-tag">Doors & Windows</span>
+        <span class="wood-tag">Roof Beams</span>
+        <span class="wood-tag">Flooring</span>
       </div>
     </div>
     <div class="wood-card padauk reveal" id="wood-padauk" onclick="window.location.href='kapur.html'" style="cursor:pointer;">
       <div class="wood-texture-swatch swatch-kapur swatch-lg"></div>
       <div class="wood-name">Kapur Wood</div>
       <div class="wood-sci">Dryobalanops spp.</div>
-      <p class="wood-desc">
-        A highly valued timber from Southeast Asia, Kapur is known for its excellent strength-to-weight ratio and fine, even texture. Its pale yellowish-brown tone and smooth grain make it ideal for general construction, furniture, plywood, and interior joinery. Naturally durable and easy to work with.
-      </p>
+      <p class="wood-desc">A highly valued timber from Southeast Asia, Kapur is known for its excellent strength-to-weight ratio and fine, even texture. Its pale yellowish-brown tone and smooth grain make it ideal for general construction, furniture, plywood, and interior joinery.</p>
       <div class="wood-tags">
         <span class="wood-tag">Furniture</span>
         <span class="wood-tag">Construction</span>
@@ -1513,9 +1527,7 @@
       <div class="wood-texture-swatch swatch-sal swatch-lg"></div>
       <div class="wood-name">American Sal</div>
       <div class="wood-sci">Shorea robusta (American Grade)</div>
-      <p class="wood-desc">
-        A versatile and reliable hardwood known for its excellent load-bearing strength. American Sal is widely used in heavy construction, railway sleepers, and structural applications. Its dense grain makes it resistant to splitting and wear.
-      </p>
+      <p class="wood-desc">A versatile and reliable hardwood known for its excellent load-bearing strength. American Sal is widely used in heavy construction, railway sleepers, and structural applications. Its dense grain makes it resistant to splitting and wear.</p>
       <div class="wood-tags">
         <span class="wood-tag">Structural</span>
         <span class="wood-tag">Construction</span>
@@ -1527,9 +1539,7 @@
       <div class="wood-texture-swatch swatch-mahagani swatch-lg"></div>
       <div class="wood-name">Mahogany</div>
       <div class="wood-sci">Swietenia mahagoni</div>
-      <p class="wood-desc">
-        A timeless classic in fine woodworking. Mahogany's rich reddish-brown tones, straight grain, and workability make it the top choice for premium furniture, cabinetry, and interior panelling. It finishes beautifully and holds polish exceptionally well.
-      </p>
+      <p class="wood-desc">A timeless classic in fine woodworking. Mahogany's rich reddish-brown tones, straight grain, and workability make it the top choice for premium furniture, cabinetry, and interior panelling. It finishes beautifully and holds polish exceptionally well.</p>
       <div class="wood-tags">
         <span class="wood-tag">Fine Furniture</span>
         <span class="wood-tag">Cabinetry</span>
@@ -1537,7 +1547,31 @@
         <span class="wood-tag">Interior Design</span>
       </div>
     </div>
+    <div class="wood-card reveal" id="wood-silveroak" onclick="window.location.href='silveroak.html'" style="cursor:pointer;">
+      <div class="wood-texture-swatch swatch-silveroak swatch-lg"></div>
+      <div class="wood-name">Silver Oak</div>
+      <div class="wood-sci">Grevillea robusta</div>
+      <p class="wood-desc">A fast-growing, versatile hardwood known for its beautiful silver-grey grain and excellent workability. Silver Oak is widely used for furniture, plywood, and decorative purposes, offering an attractive and affordable alternative to premium hardwoods.</p>
+      <div class="wood-tags">
+        <span class="wood-tag">Furniture</span>
+        <span class="wood-tag">Plywood</span>
+        <span class="wood-tag">Decorative</span>
+        <span class="wood-tag">Interior</span>
+      </div>
+    </div>
+    <div class="wood-card reveal" id="wood-brazilteak" onclick="window.location.href='brazilteak.html'" style="cursor:pointer;">
+      <div class="wood-texture-swatch swatch-brazilteak swatch-lg"></div>
+      <div class="wood-name">Brazil Teak</div>
+      <div class="wood-sci">Cumaru / Dipteryx odorata</div>
+      <p class="wood-desc">One of the hardest and most durable woods in the world. Brazil Teak (Cumaru) boasts exceptional hardness, natural oil content, and stunning warm brown tones. Highly sought after for premium flooring, decking, and heavy construction applications.</p>
+      <div class="wood-tags">
+        <span class="wood-tag">Premium Flooring</span>
+        <span class="wood-tag">Decking</span>
+        <span class="wood-tag">Heavy Construction</span>
+      </div>
+    </div>
   </div>
+
   <div class="imported-banner reveal" id="wood-imported">
     <div class="wood-texture-swatch swatch-imported" style="margin-bottom:0; width:48px; height:48px; flex-shrink:0;"></div>
     <div>
@@ -1619,10 +1653,12 @@
           <label>Wood Type Interested In</label>
           <select id="enq-wood">
             <option value="">Select wood type...</option>
-            <option>Teak</option>
-            <option>Padauk</option>
+            <option>Kerala Teak (Nilambur)</option>
+            <option>Kapur</option>
             <option>American Sal</option>
             <option>Mahogany</option>
+            <option>Silver Oak</option>
+            <option>Brazil Teak</option>
             <option>Imported Wood</option>
             <option>Multiple / Not Sure</option>
           </select>
@@ -1743,10 +1779,12 @@
     </div>
     <div class="footer-col">
       <h5>Products</h5>
-      <a href="#woods">Teak Wood</a>
-      <a href="#woods">Kapur Wood</a>
-      <a href="#woods">American Sal</a>
-      <a href="#woods">Mahogany</a>
+      <a href="teak.html">Kerala Teak</a>
+      <a href="kapur.html">Kapur Wood</a>
+      <a href="sal.html">American Sal</a>
+      <a href="mahogany.html">Mahogany</a>
+      <a href="silveroak.html">Silver Oak</a>
+      <a href="brazilteak.html">Brazil Teak</a>
       <a href="#woods">Imported Woods</a>
     </div>
     <div class="footer-col">
@@ -1940,7 +1978,7 @@
   }
 
   // ── Animated counters ──
-  function animateCounter(el, target, suffix, duration = 1800) {
+  function animateCounter(el, target, suffix, duration = 1800, label = '') {
     let start = 0;
     const step = target / (duration / 16);
     const timer = setInterval(() => {
@@ -1977,7 +2015,7 @@
         const statNums = document.querySelectorAll('.stat-num');
         statNums.forEach(el => {
           const text = el.textContent.trim();
-          if (text.includes('500')) animateCounter(el, 500, '+');
+          if (text.includes('5L')) animateCounter(el, 5, 'L+', 1800, 'Lakhs');
           else if (text.includes('10')) animateCounter(el, 10, '+');
         });
       }
